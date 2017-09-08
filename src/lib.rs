@@ -86,10 +86,8 @@ extern crate gfx_device_gl;
 extern crate gfx_graphics;
 extern crate graphics;
 extern crate shader_version;
-extern crate glutin_window;
 pub extern crate texture;
 
-use glutin_window::GlutinWindow;
 pub use shader_version::OpenGL;
 pub use graphics::*;
 pub use piston::window::*;
@@ -114,7 +112,7 @@ pub type G2d<'a> = GfxGraphics<'a,
 pub type G2dTexture = Texture<gfx_device_gl::Resources>;
 
 /// Contains everything required for controlling window, graphics, event loop.
-pub struct PistonWindow<W: Window = GlutinWindow> {
+pub struct PistonWindow<W: Window> {
     /// The window.
     pub window: W,
     /// GFX encoder.
